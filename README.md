@@ -1,30 +1,34 @@
 # SEPM7
-# Simple pygame program
 
-# Import and initialize the pygame library
-import pygame
-pygame.init()
-
-# Set up the drawing window
-screen = pygame.display.set_mode([500, 500])
-
-# Run until the user asks to quit
-running = True
-while running:
-
-    # Did the user click the window close button?
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    # Fill the background with white
-    screen.fill((255, 255, 255))
-
-    # Draw a solid blue circle in the center
-    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
-
-    # Flip the display
-    pygame.display.flip()
-
-# Done! Time to quit.
-pygame.quit()
+print('Welcome to AskPython Quiz')
+answer=input('Are you ready to play the Quiz ? (yes/no) :')
+score=0
+total_questions=3
+ 
+if answer.lower()=='yes':
+    answer=input('Question 1: What is your Favourite programming language?')
+    if answer.lower()=='python':
+        score += 1
+        print('correct')
+    else:
+        print('Wrong Answer :(')
+ 
+ 
+    answer=input('Question 2: Do you follow any author on AskPython? ')
+    if answer.lower()=='yes':
+        score += 1
+        print('correct')
+    else:
+        print('Wrong Answer :(')
+ 
+    answer=input('Question 3: What is the name of your favourite website for learning Python?')
+    if answer.lower()=='askpython':
+        score += 1
+        print('correct')
+    else:
+        print('Wrong Answer :(')
+ 
+print('Thankyou for Playing this small quiz game, you attempted',score,"questions correctly!")
+mark=(score/total_questions)*100
+print('Marks obtained:',mark)
+print('BYE!')
